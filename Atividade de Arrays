@@ -1,0 +1,91 @@
+package atividadeDeArrays;
+import java.util.Scanner;
+import java.util.Random;
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner entrada = new Scanner(System.in);
+		Random generator = new Random();
+		
+		int MaN=0;
+		int MeN=0;
+		int valor = 5001;
+		int y =entrada.nextInt();
+		int vet[] = new int [y];
+		int x=0;
+		String loop;
+		int pares[] =new int [y];
+		int impares[] =new int [y];
+		int primos[] = new int [y];
+		int soma=0;
+		int media;
+		int moda;
+		boolean teste=true;
+		
+		while(teste=true) {
+		y =entrada.nextInt();
+		if(y<=0) {
+			System.out.println("Entrada inválida");
+			System.out.println("Por favor digite uma entrada válida:");
+			y=entrada.nextInt();	
+		}
+		do {
+			vet[x] = generator.nextInt(valor);
+			if(x==0) {
+				MaN=vet[x];
+			}else 
+				if(vet[x]>MaN) {
+					MaN = vet[x];
+				}
+			if(x==0) {
+				MeN= vet[x];
+			}else
+				if(vet[x]<MeN) {
+					MeN = vet[x];
+				}
+			if(vet[x]%2==0) {
+				pares[x]= vet[x];
+			}else
+				impares[x]=vet[x];
+			
+			for(int i = 2; i<=vet[x]/2;i++) {
+				if(vet[x] % i ==0) {
+					primos[x]=vet[x];
+				}}
+			soma= soma+vet[x];
+			if(x==0) {
+				moda=vet[x];
+			}
+			if(vet[x]==moda)
+				moda=vet[x];
+			
+			x++;
+			
+			}while(x<y);
+		soma/y=media;
+
+		System.out.println("Números gerados:");
+		for (x=0;x<y; x++) {
+			System.out.println(vet[x]);
+	}
+		System.out.println("Maior número:"+ MaN);
+		System.out.println("Menor número"+ MeN);
+		System.out.println("Números primos");
+		for (x=0;x<y; x++) {
+			System.out.println(primos[x]);
+	}
+		System.out.println("A soma dos números: "+soma );
+		System.out.println("A média dos números: "+ media);
+		
+		System.out.println("Deseja executar novamente?");
+		loop = entrada.nextLine();
+		if(loop == "sim") {
+			teste = true;
+		}else
+			if(loop == "não") {
+				teste = false;
+			}
+				
+		}
+	}}

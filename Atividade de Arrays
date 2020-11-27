@@ -20,7 +20,7 @@ public class Main {
 		int primos[] = new int [y];
 		int soma=0;
 		int media;
-		int moda;
+		int moda=0;
 		boolean teste=true;
 		
 		while(teste=true) {
@@ -63,7 +63,7 @@ public class Main {
 			x++;
 			
 			}while(x<y);
-		soma/y=media;
+		media= soma/y;
 
 		System.out.println("Números gerados:");
 		for (x=0;x<y; x++) {
